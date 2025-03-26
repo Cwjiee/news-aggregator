@@ -2,7 +2,11 @@
 # exit on error
 set -o errexit
 
-bundle install
+rm -f Gemfile.lock
+
+bundle install --clean
+bundle update net-pop
+
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
 
