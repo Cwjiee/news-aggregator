@@ -388,6 +388,7 @@ DEPENDENCIES
   jbuilder
   kamal
   kaminari (~> 1.2)
+  net-pop
   nokogiri
   propshaft
   puma (>= 5.0)
