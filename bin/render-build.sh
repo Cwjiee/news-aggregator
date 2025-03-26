@@ -2,9 +2,6 @@
 # exit on error
 set -o errexit
 
-gem uninstall net-pop
-gem install net-pop
-
 bundle install
 
 bundle exec rails assets:precompile
