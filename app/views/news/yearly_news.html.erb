@@ -1,0 +1,18 @@
+<h1>News for <%= @month %></h1>
+<%= link_to "Back to Years", root_path %>
+
+<% @months.each do |year| %>
+  <li>
+    <%= link_to year, yearly_news_path(year) %>
+  </li>
+<% end %>
+<ul>
+  <% @news.each do |news| %>
+    <li>
+        <%= news[:title] %> |
+        <a href="https://www.theverge.com/<%= news[:url] %>">article link</a> |
+        <%= news[:time] %>
+    </li>
+  <% end %>
+</ul>
+

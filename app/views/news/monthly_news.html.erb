@@ -1,0 +1,21 @@
+<h1>News for <%= Date::MONTHNAMES[@month.to_i] %> <%= @year %></h1>
+<%= link_to "Back to Months", year_months_path(@year) %>
+
+<ul>
+  <% @news.each do |article| %>
+    <li>
+      <a href="<%= article[:url] %>" target="_blank"><%= article[:title] %></a>
+    </li>
+  <% end %>
+</ul>
+
+<div class="pagination">
+  <% if @news.prev_page %>
+    <%= link_to "Previous", monthly_news_path(@year, @month, page: @news.prev_page) %>
+  <% end %>
+
+  <% if @news.next_page %>
+    <%= link_to "Next", monthly_news_path(@year, @month, page: @news.next_page) %>
+  <% end %>
+</div>
+

@@ -1,0 +1,10 @@
+<ul>
+  <% @news.each do |article| %>
+    <li>
+      <a href="<%= article[:url] %>" target="_blank"><%= article[:title] %></a>
+    </li>
+  <% end %>
+</ul>
+
+<%= paginate @news, remote: true %>
+

@@ -1,0 +1,11 @@
+<h1>News for <%= @year %></h1>
+<%= link_to "Back to Years", root_path %>
+
+<ul>
+  <% @months.each do |month| %>
+    <li>
+      <%= link_to Date::MONTHNAMES[month], monthly_news_path(@year, month) %>
+    </li>
+  <% end %>
+</ul>
+

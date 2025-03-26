@@ -1,0 +1,9 @@
+<h1>Select a Year</h1>
+<ul>
+  <% @years.each do |year| %>
+    <li>
+      <%= link_to year, year_months_path(year) %>
+    </li>
+  <% end %>
+</ul>
+
