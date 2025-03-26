@@ -82,9 +82,9 @@ production:
   primary: &primary_production
     <<: *default
     adapter: postgresql
-    database: mysite
-    username: mysite
-    password: <%= ENV["DATABASE_URL"] %>
+    url: <%= Rails.application.credentials.dig(:render, :database_url) %>
+    username: <%= Rails.application.credentials.dig(:render, :username) %>
+    password: <%= Rails.application.credentials.dig(:render, :password) %>
   cache:
     <<: *primary_production
     database: mysite
