@@ -2,8 +2,9 @@
 # exit on error
 set -o errexit
 
-bundle config set clean true
-bundle update net-pop
+gem uninstall net-pop
+gem install net-pop
+
 bundle install
 
 bundle exec rails assets:precompile
