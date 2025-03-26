@@ -4,7 +4,8 @@ set -o errexit
 
 rm -f Gemfile.lock
 
-bundle install --clean
+bundle config set clean true
+bundle install
 bundle update net-pop
 
 bundle exec rails assets:precompile
